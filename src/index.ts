@@ -26,6 +26,9 @@ const renderPage = (pageName: string) => {
           localStorage.setItem("name", userName);
           // clear the input field
           userInput.value = "";
+
+          // 3. When clicking the Start button, render the quiz page
+          renderPage("quiz");
         } else {
           alert("Please enter your name.");
         }
