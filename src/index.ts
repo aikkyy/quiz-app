@@ -27,7 +27,7 @@ const renderPage = (pageName: string) => {
           // clear the input field
           userInput.value = "";
 
-          // 3. When clicking the Start button, render the quiz page
+          // 3. When clicking the start button, render the quiz page
           renderPage("quiz");
         } else {
           alert("Please enter your name.");
@@ -39,3 +39,5 @@ const renderPage = (pageName: string) => {
 };
 
 renderPage("start");
+
+// #4 Fetch the questions.json file and render the question, 4 options, and the correct answer
