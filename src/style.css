@@ -1,10 +1,15 @@
 :root {
   --primary: #004643;
   --secondary: #f8c660;
+  --red: #cf3730;
   --grey-dark: #4a4a4a;
   --grey-light: #d3d3d3;
   --grey-background: #eff0f3;
   --primary-low-opacity: #abd1c6;
+}
+
+* {
+  font-family: "Courier New", Courier, monospace;
 }
 
 body {
@@ -45,6 +50,7 @@ body {
   width: 10rem;
   border-radius: 50%;
   text-transform: uppercase;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 form {
@@ -87,7 +93,7 @@ form > input {
   border: none;
   font-size: 1.2rem;
   padding: 0.8rem 1rem;
-  border-radius: 5px;
+  border-radius: 35px;
   cursor: pointer;
 }
 
@@ -107,7 +113,8 @@ form > input {
 
 .question-container {
   background-color: white;
-  border-radius: 5px;
+  border-radius: 35px;
+  box-shadow: 0px 20px 50px -10px #00000026;
   padding: 2rem;
   width: 100%;
   display: flex;
@@ -130,7 +137,7 @@ form > input {
   width: 100%;
   background-color: white;
   border: 1px solid var(--grey-light);
-  border-radius: 5px;
+  border-radius: 35px;
   border: none;
   color: var(--grey-dark);
   padding: 15px 32px;
