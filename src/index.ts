@@ -38,9 +38,6 @@ const renderPage = (pageName: string): void => {
               // turn option background red if incorrect answer
               selectedOption.style.backgroundColor = "var(--red)";
               selectedOption.style.color = "white";
-
-              // add 10 points if correct answer
-              currentResult.score += 10;
             }
           }
         });
