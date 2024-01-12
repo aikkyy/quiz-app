@@ -267,11 +267,11 @@ const fetchQuestions = (fileName: string): void => {
 };
 
 // FUNCTION - function to handle option selection
-function handleOptionSelection(
+const handleOptionSelection = (
   optionBtn: HTMLDivElement,
   selectedIndex: number,
   correctIndex: number
-): void {
+): void => {
   // get option buttons
   const optionBtns: NodeListOf<HTMLDivElement> =
     document.querySelectorAll(".option-btn");
@@ -286,7 +286,7 @@ function handleOptionSelection(
 
   // update the selected option index
   selectedOptionIndex = selectedIndex;
-}
+};
 
 // #7 RENDER THE RESULTS ON THE LEADERBOARD
 
