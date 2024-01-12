@@ -1,27 +1,27 @@
 {
   "questions": [
     {
-      "question": "Qual a diferença entre = , == e === ?",
+      "question": "What's the difference between =, ==, and ===?",
       "options": [
-        "== verifica a igualdade do valor, enquanto === verifica valor e tipo de variável",
-        "=== verifica a igualdade do valor, enquanto == verifica valor e tipo de variável",
-        "== verifica o total, enquanto == verifica o tipo da variável",
-        "Nenhuma"
+        "== checks for value equality, while === checks for value and variable type",
+        "=== checks for value equality, while == checks for value and variable type",
+        "== checks the total, while == checks the variable type",
+        "None"
       ],
       "correct": 0
     },
     {
-      "question": "O que “1” + 2 + 4 retorna?",
+      "question": "What does '1' + 2 + 4 return?",
       "options": ["124", "7", "NaN", "Undefined"],
       "correct": 0
     },
     {
-      "question": "Como você altera o estilo ou classe de um elemento?",
+      "question": "How do you change the style or class of an element?",
       "options": [
         "document.getElementById(“myElement”).style.fontSize = “20”;",
         "document.getElementById(“myElement”).className = “anyclass”;",
         "document.getElementById(“myElement”).style.className = “anyclass”;",
-        "Todas as opções"
+        "All options"
       ],
       "correct": 3
     }

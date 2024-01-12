@@ -1,10 +1,24 @@
+/* Google Font import */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* ROOT */
 :root {
   --primary: #004643;
-  --secondary: #f8c660;
+  --primary-low-opacity: #3b7873;
+  --secondary: #ff8f00;
+  --accent: #9c77b5;
+  --correct-answer: #4c9b7e;
+  --incorrect-answer: #db504a;
+  --text-light: #ffffff;
+  --text-dark: #333333;
   --grey-dark: #4a4a4a;
   --grey-light: #d3d3d3;
   --grey-background: #eff0f3;
-  --primary-low-opacity: #abd1c6;
+}
+
+/* ---- GENERAL CSS ---- */
+* {
+  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -15,10 +29,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.question-number {
-  color: black;
 }
 
 .container {
@@ -32,6 +42,33 @@ body {
   gap: 2rem;
 }
 
+button {
+  background-color: var(--secondary);
+  color: var(--text-light);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: block;
+  width: 100%;
+  margin: 2rem auto;
+  font-size: 1.2rem;
+  padding: 0.8rem 1rem;
+  border-radius: 35px;
+}
+button:hover {
+  background-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+}
+
+/* ---- START PAGE CSS ---- */
 .quiz-brand {
   display: flex;
   justify-content: center;
@@ -40,36 +77,36 @@ body {
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
-  background-color: white;
-  height: 10rem;
-  width: 10rem;
+  background-color: var(--text-light);
+  height: 12rem;
+  width: 12rem;
+  margin: 2rem;
   border-radius: 50%;
   text-transform: uppercase;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
+/* form CSS */
 form {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   gap: 1rem;
 }
-
 form > label {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: white;
 }
-
 form > input::placeholder {
   font-size: 1rem;
   color: var(--grey-light);
 }
-
 form > input:focus {
   border: 1px solid var(--secondary);
 }
-
 form > input {
   padding: 0.5rem 0.8rem;
   font-size: 1.2rem;
@@ -80,44 +117,27 @@ form > input {
   outline: none;
 }
 
-.btn-component {
-  width: 100%;
-  margin-top: 1.2rem;
-  color: white;
-  border: none;
-  font-size: 1.2rem;
-  padding: 0.8rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn-green {
-  background-color: var(--primary);
-}
-
-.btn-gold {
-  background-color: var(--secondary);
-}
-
-/* QUIZ CSS */
+/* ---- QUIZ PAGE CSS ---- */
 .question-number {
   font-size: 1rem;
-  color: var(--grey-dark);
+  color: var(--text-dark);
 }
 
 .question-container {
-  background-color: white;
-  border-radius: 5px;
-  padding: 2rem;
-  width: 100%;
   display: flex;
+  width: 100%;
   flex-direction: column;
   box-sizing: border-box;
+  background-color: var(--text-light);
   color: var(--grey-dark);
   font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.btn-list {
+.option-list {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -126,11 +146,11 @@ form > input {
   gap: 1rem;
 }
 
-.btn-answer {
+.option-btn {
   width: 100%;
   background-color: white;
   border: 1px solid var(--grey-light);
-  border-radius: 5px;
+  border-radius: 35px;
   border: none;
   color: var(--grey-dark);
   padding: 15px 32px;
@@ -142,16 +162,24 @@ form > input {
   cursor: pointer;
 }
 
-.btn-selected {
+.selected {
   background-color: var(--primary-low-opacity);
-  color: var(--primary);
+  color: var(--text-light);
+}
+.correct {
+  background-color: var(--correct-answer);
+}
+.incorrect {
+  background-color: var(--incorrect-answer);
+  color: var(--text-light);
 }
 
-/* LEADERBOARD CSS */
+/* LEADERBOARD PAGE CSS */
 .leaderboard-title {
   color: white;
 }
 
+/* podium CSS */
 .container-podium {
   display: flex;
   align-items: center;
@@ -162,7 +190,6 @@ form > input {
   padding: 1rem;
   box-sizing: border-box;
 }
-
 .podium-item {
   display: flex;
   flex-direction: column;
@@ -172,7 +199,6 @@ form > input {
   color: white;
   font-size: 1rem;
 }
-
 .podium-rounded {
   display: flex;
   flex-direction: column;
@@ -183,25 +209,22 @@ form > input {
   background-color: var(--grey-light);
   border-radius: 50%;
 }
-
 .first-podium {
   border: 2px solid var(--secondary);
-  height: 4rem;
-  width: 4rem;
+  height: 10rem;
+  width: 10rem;
   font-size: 1.5rem;
 }
-
 .second-podium {
   margin-top: 3rem;
-  height: 3rem;
-  width: 3rem;
+  height: 8rem;
+  width: 8rem;
   font-size: 1.2rem;
 }
-
 .third-podium {
   margin-top: 4rem;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 6rem;
+  width: 6rem;
   font-size: 1rem;
 }
 
@@ -231,4 +254,8 @@ form > input {
   font-size: 16px;
   display: flex;
   cursor: pointer;
+}
+
+.btns-container {
+  display: flex;
 }
